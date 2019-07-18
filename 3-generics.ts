@@ -3,8 +3,8 @@ function identity<T>(arg: T): T {
   return arg;
 }
 
-const isGenString = identity("string");
-const isGenNumber = identity(1);
+const isGenString = identity<string>("string");
+const isGenNumber = identity<number>(1);
 
 // Generic Interfaces
 interface GenericClass<T> {
@@ -29,6 +29,7 @@ interface Person {
 }
 
 function getAgeFailure<T>(person: T): number {
+  // Property 'age' does not exist on type 'T'
   return person.age;
 }
 
